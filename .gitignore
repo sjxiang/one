@@ -13,3 +13,11 @@
 
 # Dependency directories (remove the comment below to include it)
 # vendor/
+
+
+# 过滤指定目录
+.git/
+
+
+# 过滤指定文件
+go.sum
