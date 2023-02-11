@@ -1,20 +1,11 @@
 
 
-
-# 进阶语法
-
-
-context
-sync 并发与 channel
-反射与 unsafe
-网络编程与 SQL 编程
-
-AST 编程和模板编程
-    - 规则引擎
+# 反射
 
 
 
-- 类型系统
+
+## 1 - 类型系统
 
 绝大多数 pl 的类型系统都是类似的，会有声明类型、实际类型之类的区分。
 
@@ -24,7 +15,7 @@ AST 编程和模板编程
 
 
 
-- reflect.Type 和 reflect.Value 
+## 2 - reflect.Type 和 reflect.Value 
 
 反射的相关 API 都在 reflect 包，最核心的两个：
     
@@ -38,7 +29,7 @@ AST 编程和模板编程
 
 
 
-- reflect.Kind
+## 3 - reflect.Kind
 
 reflect 包有一个很强的假设：`你知道你操作的是什么 Kind`
 
@@ -60,5 +51,10 @@ Kind：Kind 是一个枚举值，用来判断操作的对应类型；例如，�
  
 
 
- 
+# 4 - 代码范例
+
+    1. 用反射输出字段名字和值
+    2. 用反射设置值
+    3. 输出方法信息，并执行调用
+    4. 反射遍历
     

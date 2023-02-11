@@ -1,9 +1,8 @@
 
-
 # gin web 框架概览
 
 
-### 核心接口 IRoutes
+## 1 - 核心接口 IRoutes
 
 ```go
 
@@ -64,7 +63,7 @@ router.GET("/static", func(context *gin.Context) {
 
 
 
-### Engine 实现
+## 2 - Engine 实现
 
 - 实现了路由树功能，提供了注册和匹配路由的功能      
     e.g. addRoute()
@@ -76,7 +75,7 @@ Engine 的路由树功能本质上是依赖于 methodTree 的
 
 
 
-### methodTrees 和 methodTree
+## 3 - methodTrees 和 methodTree
 
     methodTree 才是真实的路由树
     Gin 定义了 methodTrees，它实际上代表的是森林，即每一个 HTTP 方法都对应到一棵树
@@ -98,7 +97,7 @@ type methodTrees []methodTree
 ```
 
 
-### HandlerFunc 和 HandlersChain
+## 4 - HandlerFunc 和 HandlersChain
 
     HandlerFunc 定义了核心抽象 -- 处理逻辑
     在默认情况下，它代表了注册路由的业务代码
@@ -115,7 +114,10 @@ type HandlersChain []HandlerFunc
     PS. 最后一个则是封装了业务逻辑的 HandlerFunc 
 ```
 
-### Context 抽象
+
+
+
+## 5 - Context 抽象
 
 Context 也是代表了执行的上下文，提供了丰富的 API：
 
@@ -146,7 +148,7 @@ type Context struct {
 
 
 
-### 抽象总结
+## 6 - 抽象总结
 
     methodTree 代表路由 & node 
     __________________
@@ -158,6 +160,6 @@ HandlerFunc 处理逻辑 / Context 上下文 / Engine 代表服务器
 
 
 
-# 实现步骤
+## 实现步骤
 
 1. 定义 
